@@ -64,33 +64,39 @@ Vhodný je např. Python[1] (+scipy stats), R, Mathematica, Matlab, Excel atd.
 Úkol 1
 ======
 
-(1b) Z obou datových souborů načtěte texty k analýze. Pro každý text zvlášť odhadněte pravděpodobnosti znaků (symbolů včetně mezery), které se v textech vyskytují. Výsledné pravděpodobnosti graficky znázorněte.
-(1b) Pro každý text zvlášť spočtěte entropii odhadnutého rozdělení znaků.
-(2b) Nalezněte optimální instantní kód CC pro kódování znaků jednoho z textů.
-(2b) Pro každý text zvlášť spočtěte střední délku kódu CC a porovnejte ji s entropií rozdělení znaků.
+1. (1b) Z obou datových souborů načtěte texty k analýze. Pro každý text zvlášť odhadněte pravděpodobnosti znaků (symbolů včetně mezery), které se v textech vyskytují. Výsledné pravděpodobnosti graficky znázorněte.
+2. (1b) Pro každý text zvlášť spočtěte entropii odhadnutého rozdělení znaků.
+3. (2b) Nalezněte optimální instantní kód CC pro kódování znaků jednoho z textů.
+4. (2b) Pro každý text zvlášť spočtěte střední délku kódu CC a porovnejte ji s entropií rozdělení znaků.
 
 Úkol 2
 ======
 
-(1b) Z obou datových souborů načtěte texty k analýze. Pro každý text zvlášť odhadněte základní charakteristiky délek slov, tj. střední hodnotu a rozptyl. Graficky znázorněte rozdělení délek slov.
-(1b) Pro každý text zvlášť odhadněte pravděpodobnosti písmen (symbolů mimo mezery), které se v textech vyskytují. Výsledné pravděpodobnosti graficky znázorněte.
-(1.5b) Na hladině významnosti 5% otestujte hypotézu, že rozdělení délek slov nezávisí na tom, o který jde text. Určete také p-hodnotu testu.
-(1.5b) Na hladině významnosti 5% otestujte hypotézu, že se střední délky slov v obou textech rovnají. Určete také p-hodnotu testu.
-(1b) Na hladině významnosti 5% otestujte hypotézu, že rozdělení písmen nezávisí na tom, o který jde text. Určete také p-hodnotu testu.
+1. (1b) Z obou datových souborů načtěte texty k analýze. Pro každý text zvlášť odhadněte základní charakteristiky délek slov, tj. střední hodnotu a rozptyl. Graficky znázorněte rozdělení délek slov.
+2. (1b) Pro každý text zvlášť odhadněte pravděpodobnosti písmen (symbolů mimo mezery), které se v textech vyskytují. Výsledné pravděpodobnosti graficky znázorněte.
+3. (1.5b) Na hladině významnosti 5% otestujte hypotézu, že rozdělení délek slov nezávisí na tom, o který jde text. Určete také p-hodnotu testu.
+4. (1.5b) Na hladině významnosti 5% otestujte hypotézu, že se střední délky slov v obou textech rovnají. Určete také p-hodnotu testu.
+5. (1b) Na hladině významnosti 5% otestujte hypotézu, že rozdělení písmen nezávisí na tom, o který jde text. Určete také p-hodnotu testu.
+
 Nápověda k bodům 3 a 5: Proveďte test nezávislosti v kontingenční tabulce.
 
 Úkol 3
 ======
 
-(1b) Z jednoho datového souboru načtěte text k analýze. Odhadněte pravděpodobnosti písmen (včetně mezer), které se v textu vyskytují. Takto získané empirické rozdělení graficky znázorněte. Pro další body předpokládejme, že je text vygenerován z homogenního markovského řetězce s diskrétním časem.
-(1.5b) Za tohoto předpokladu odhadněte matici přechodu. Pro odhad matice přechodu vizte přednášku 17.
-(2b) Na základě matice z předchozího bodu najděte stacionární rozdělení tohoto řetězce.
-(1.5b) Porovnejte stacionární rozdělení se získaným empirickým rozdělením. Tj. na hladině 5% otestujte hypotézu, že se empirické rozdělení z bodu 1 rovná stacionárnímu rozdělení.
+1. (1b) Z jednoho datového souboru načtěte text k analýze. Odhadněte pravděpodobnosti písmen (včetně mezer), které se v textu vyskytují. Takto získané empirické rozdělení graficky znázorněte. Pro další body předpokládejme, že je text vygenerován z homogenního markovského řetězce s diskrétním časem.
+2. (1.5b) Za tohoto předpokladu odhadněte matici přechodu. Pro odhad matice přechodu vizte přednášku 17.
+3. (2b) Na základě matice z předchozího bodu najděte stacionární rozdělení tohoto řetězce.
+4. (1.5b) Porovnejte stacionární rozdělení se získaným empirickým rozdělením. Tj. na hladině 5% otestujte hypotézu, že se empirické rozdělení z bodu 1 rovná stacionárnímu rozdělení.
 
 Úkol 4
 ======
 
-M∣G∣∞, \lambda = 10~\mathrm{s}^{-1}λ=10 s −1 S\sim\mathrm{Unif}(0,1)S∼Unif(0,1), N_0 = 0N 0=0
-(2b)simulace a zobrazení trajektorie \{N_t \mid t\in(0,10~\mathrm{s})\}{N t∣t∈(0,10 s)}
-(2b)simulace $N = 1000$ nezávislých trajektorií pro t\in(0,1000)t∈(0,1000), odhad rozdělení N_1000N 1 000
-(2b)grafické(nebo i statistické?) porovnání výsledku s asymptotickým odhadem
+1. M∣G∣∞, λ = 10 s^{-1} S∼Unif(0,1), N_0 = 0
+2. (2b)simulace a zobrazení trajektorie {N_t ∣ t∈(0,10 s)}
+3. (2b)simulace $N = 1000$ nezávislých trajektorií pro t∈(0,1000), odhad rozdělení N_1000
+4. (2b)grafické(nebo i statistické?) porovnání výsledku s asymptotickým odhadem
+
+Zdroj
+=====
+
+[Link](https://courses.fit.cvut.cz/MI-SPI/homework/index.html)
