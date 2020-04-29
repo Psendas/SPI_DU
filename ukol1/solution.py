@@ -7,7 +7,7 @@ L = len(surname) # počet písmen v příjmení reprezentanta,
 X = ((K*L*23) % (20)) + 1
 Y = ((X + ((K*5 + L*7) % (19))) % (20)) + 1
 
-folder = "hw1-source//"
+folder = "..//hw1-source//"
 xxx = str(str(X).zfill(3)) + ".txt"
 yyy = str(str(Y).zfill(3)) + ".txt"
 
@@ -51,8 +51,10 @@ def char_prob(filename):
         plt.title("Grafické znázornění pravděpodobností znaků textu")
         plt.xlabel("Znaky výchozího textu")
         plt.ylabel("Pravděpodobnost")
-        save_to = filename.split('//')[1]
+        save_to = filename.split('//')[2]
         save_to = save_to.split('.')[0]
         plt.savefig(save_to + "_char_prob.png", dpi=350)
 
 char_prob(folder+xxx)
+char_prob(folder+yyy)
+
