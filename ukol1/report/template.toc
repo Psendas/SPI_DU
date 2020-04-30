@@ -1,0 +1,11 @@
+\babel@toc {czech}{}
+\contentsline {section}{\numberline {1}Zadání}{2}% 
+\contentsline {subsection}{\numberline {1.1}Sady instancí}{2}% 
+\contentsline {subsection}{\numberline {1.2}Ověření výstupů}{2}% 
+\contentsline {subsection}{\numberline {1.3}Výpočetní platforma}{2}% 
+\contentsline {section}{\numberline {2}Popis implementovaných metod}{3}% 
+\contentsline {subsection}{\numberline {2.1}Dynamické programování}{3}% 
+\contentsline {subsection}{\numberline {2.2}Heuristiky}{3}% 
+\contentsline {subsection}{\numberline {2.3}FPTAS}{3}% 
+\contentsline {section}{\numberline {3}Naměřené výsledky}{4}% 
+\contentsline {section}{\numberline {4}Zhodnocení výsledků}{8}% 
