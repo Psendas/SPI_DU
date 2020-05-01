@@ -141,6 +141,7 @@ def huf_code(chars, probs):
 
 if __name__ == "__main__":
 
+    print([K, L, X, Y])
     char_prob(folder+yyy)
     char_prob(folder+xxx)
 

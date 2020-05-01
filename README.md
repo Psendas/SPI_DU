@@ -34,6 +34,8 @@ Pokyny pro vypracování
 Parametry úlohy spočtěte následovně:
 ------------------------------------
 
+Parametry : [ "K" : 27, "L" : 8, "X" : 9, "Y" : 11]
+
 - K = den narození reprezentanta skupiny (1-31),
 
 - L = počet písmen v příjmení reprezentanta,
