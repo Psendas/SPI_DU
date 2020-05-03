@@ -1,0 +1,8 @@
+\babel@toc {czech}{}
+\contentsline {section}{\numberline {1}Zadání}{2}% 
+\contentsline {section}{\numberline {2}Řešení}{2}% 
+\contentsline {subsection}{\numberline {2.1}Pravděpodobnosti znaků}{2}% 
+\contentsline {subsection}{\numberline {2.2}Entropie textů}{2}% 
+\contentsline {subsection}{\numberline {2.3}Optimální instantní kód}{3}% 
+\contentsline {subsection}{\numberline {2.4}Střední délka kódu}{4}% 
+\contentsline {section}{\numberline {3}Závěr}{8}% 

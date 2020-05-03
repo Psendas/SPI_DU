@@ -1,0 +1,237 @@
+\documentclass[12pt]{article}
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{lipsum}
+\usepackage[czech]{babel}
+\usepackage{titling}
+\usepackage{xevlna}
+\usepackage{textgreek}
+\usepackage{amsmath}
+\usepackage[section]{placeins}
+\renewcommand\maketitlehooka{\null\mbox{}\vfill}
+\renewcommand\maketitlehookd{\vfill\null}
+
+\usepackage{fontspec}
+\setmainfont[Mapping=tex-text]{Times New Roman}
+\newfontface\TVSp{DejaVu Serif}
+\def\textvisiblespace{{\TVSp\char"2423}}
+
+
+\setlength{\parindent}{0pt} 
+ 
+\title{MI--SPI První úloha}
+\author{Tomáš Pšenička, Jan Groschaft}
+\date{\today}
+ 
+ 
+ % Definition of \maketitle
+\makeatletter         
+\def\@maketitle{
+%\raggedright
+\begin{center}
+{\Huge \bfseries \sffamily \@title }\\[4ex] 
+{\Large  \@author}\\[4ex] 
+\@date\\[8ex]
+\includegraphics[width = 60mm]{symbol_cvut_plna_samostatna_verze_cb.pdf}
+\end{center}}
+\makeatother
+
+% \makeatletter
+% \renewcommand\thesection{}
+% \renewcommand\thesubsection{\@arabic\c@section.\@arabic\c@subsection}
+% \makeatother
+
+
+\begin{document}
+ 
+\begin{titlingpage}
+	\maketitle
+\end{titlingpage}
+ 	
+	\newpage
+ 
+	\tableofcontents
+
+	\newpage
+
+ 	\section{Zadání}
+ 	
+ 	\begin{itemize}
+ 		\item Z obou datových souborů načtěte texty k analýze. Pro každý text zvlášť odhadněte pravděpodobnosti znaků (symbolů včetně mezery), které se v textech vyskytují. 
+ 		
+ 		\item Výsledné pravděpodobnosti graficky znázorněte. Pro každý text zvlášť spočtěte entropii odhadnutého rozdělení znaků. 
+ 		
+ 		\item Nalezněte optimální instantní kód CC pro kódování znaků jednoho z textů.
+ 		
+ 		\item Pro každý text zvlášť spočtěte střední délku kódu CC a porovnejte ji s entropií rozdělení znaků.
+ 	\end{itemize}
+   		
+   		
+	\section{Řešení}\label{r}
+		\subsection{Pravděpodobnosti znaků}\label{pz}
+			Pravděpodobnost jednotlivých znaků obou textů je zaznamenána v tabulkách \ref{pzhk_009.txt_table} a \ref{pzhk_011.txt_table}. Pravděpodobnost jednotlivých znaků byla vypočítána jako poměr výskytu znaku k celkovému počtu všech znaků a je znázorněna v grafech \ref{009_graph} a \ref{011_graph} pomocí nástroje matplotlib.
+						
+\begin{figure}[!htb]
+\includegraphics[scale=0.8]{../009_char_prob.png}\centering\caption{Grafické znázornění pravděpodobností znaků textu 009.txt}\label{009_graph}
+\end{figure}
+
+\begin{figure}[!htb]
+\includegraphics[scale=0.8]{../011_char_prob.png}\centering\caption{Grafické znázornění pravděpodobností znaků textu 011.txt}\label{011_graph}
+\end{figure}
+		
+		
+		\subsection{Entropie textů}\label{et}
+			Entropie obou textů byla vypočítána na základě zjištěných pravděpodobností následujícím vzorcem. 
+
+			$$ H(X) = -\sum_{x \displaystyle \in X} p(x) log_2 p(x)$$
+
+\begin{table}[!ht]
+\centering
+\begin{tabular}{ | c | l | } \hline
+Text	& Entropie \\ \hline
+009.txt & 4.087103237335235 \\ \hline
+011.txt & 4.084709593540786 \\ \hline
+\end{tabular}
+\caption{Entropie znaků obou textů}
+\label{ent_table}
+\end{table}
+			
+			
+			
+			
+		\subsection{Optimální instantní kód}\label{oik}
+			Pro nalezení optimálního kódu byl použit algoritmus sestrojení binárního Huﬀmanova kódu. Implementace tohoto algoritmu je provedena pomocí prioritní fronty a binárního stromu. Fronta je naplněna stavy, které obsahují jednotlivé znaky a je seřazena podle jejich pravděpodobnosti. Dva stavy s nejmenší pravděpodobností jsou vždy spojeny v jeden nový, který je zařazen do binárního stromu. Takto vytvořený stav obsahuje ukazatele na potomky, ze kterých byl sestaven a jejich sečtenou pravděpodobnost. 
+			
+			Tento postup se opakuje, dokud nezůstane poslední stav ve frontě. Výsledný kód je získán průchodem vzniklým binárním stromem až do listů. Cesta do listu určuje podobu kódového slova znaku, který se v něm nachází.
+			
+			Takto nalezené optimální kódy pro oba texty jsou zobrazeny v tabulkách \ref{pzhk_009.txt_table} a \ref{pzhk_011.txt_table}.
+			
+			\begin{table}[!ht]
+\centering
+\begin{tabular}{ | c | l | r | } \hline
+Znak    &       Pravděpodobnost &       Kód     \\ \hline
+"\textvisiblespace "     &       0.18962464589235128     &       00      \\ \hline
+"e"     &       0.10074362606232294     &       010     \\ \hline
+"t"     &       0.07967422096317281     &       1101    \\ \hline
+"a"     &       0.06515580736543909     &       1010    \\ \hline
+"o"     &       0.06373937677053824     &       1001    \\ \hline
+"n"     &       0.06161473087818697     &       1000    \\ \hline
+"s"     &       0.05081444759206799     &       0110    \\ \hline
+"i"     &       0.049575070821529746    &       11111   \\ \hline
+"h"     &       0.049043909348441925    &       11110   \\ \hline
+"r"     &       0.046742209631728045    &       11101   \\ \hline
+"d"     &       0.03665014164305949     &       11000   \\ \hline
+"l"     &       0.034702549575070823    &       10110   \\ \hline
+"w"     &       0.020892351274787536    &       111001  \\ \hline
+"u"     &       0.019830028328611898    &       111000  \\ \hline
+"m"     &       0.01929886685552408     &       110011  \\ \hline
+"c"     &       0.018590651558073653    &       110010  \\ \hline
+"f"     &       0.01823654390934844     &       101110  \\ \hline
+"y"     &       0.017351274787535412    &       011111  \\ \hline
+"g"     &       0.015580736543909348    &       011110  \\ \hline
+"b"     &       0.011862606232294617    &       011100  \\ \hline
+"p"     &       0.011508498583569405    &       1011111 \\ \hline
+"k"     &       0.006728045325779037    &       1011110 \\ \hline
+"v"     &       0.006196883852691218    &       0111011 \\ \hline
+"q"     &       0.00141643059490085     &       011101001       \\ \hline
+"j"     &       0.0012393767705382436   &       011101000       \\ \hline
+"S"     &       0.0003541076487252125   &       011101011110    \\ \hline
+"."     &       0.0003541076487252125   &       011101011111    \\ \hline
+"x"     &       0.0003541076487252125   &       01110101000     \\ \hline
+"T"     &       0.00017705382436260624  &       011101010010    \\ \hline
+"C"     &       0.00017705382436260624  &       011101010011    \\ \hline
+"O"     &       0.00017705382436260624  &       011101010100    \\ \hline
+"D"     &       0.00017705382436260624  &       011101010101    \\ \hline
+"J"     &       0.00017705382436260624  &       011101010110    \\ \hline
+"A"     &       0.00017705382436260624  &       011101010111    \\ \hline
+"M"     &       0.00017705382436260624  &       011101011000    \\ \hline
+"H"     &       0.00017705382436260624  &       011101011001    \\ \hline
+","     &       0.00017705382436260624  &       011101011010    \\ \hline
+"R"     &       0.00017705382436260624  &       011101011011    \\ \hline
+"L"     &       0.00017705382436260624  &       011101011100    \\ \hline
+"\textbackslash n"      &       0.00017705382436260624  &       011101011101    \\ \hline
+\end{tabular}
+\caption{Pravděpodobnosti znaků a Huffmanův kód sada 009.txt.}
+\label{pzhk_009.txt_table}
+\end{table}
+   		
+
+\begin{table}[!ht]
+\centering
+\begin{tabular}{ | c | l | r | } \hline
+Znak    &       Pravděpodobnost &       Kód     \\ \hline
+"\textvisiblespace "     &       0.20490876796383012     &       01      \\ \hline
+"e"     &       0.08880994671403197     &       1110    \\ \hline
+"t"     &       0.07669949943484579     &       1100    \\ \hline
+"o"     &       0.07153237526239302     &       1011    \\ \hline
+"a"     &       0.05877603746165025     &       1001    \\ \hline
+"h"     &       0.05264007750686259     &       0011    \\ \hline
+"n"     &       0.051348296463749395    &       0010    \\ \hline
+"i"     &       0.04876473437752301     &       0000    \\ \hline
+"s"     &       0.048603261747133863    &       11111   \\ \hline
+"r"     &       0.042467301792346195    &       11011   \\ \hline
+"d"     &       0.03907637655417407     &       11010   \\ \hline
+"l"     &       0.03197158081705151     &       10100   \\ \hline
+"u"     &       0.025351202971096398    &       00011   \\ \hline
+"m"     &       0.0250282577103181      &       00010   \\ \hline
+"y"     &       0.020345551429032778    &       111100  \\ \hline
+"w"     &       0.019538188277087035    &       101011  \\ \hline
+"f"     &       0.0164702082996932      &       101010  \\ \hline
+"c"     &       0.01501695462619086     &       100011  \\ \hline
+"g"     &       0.013886646213466818    &       100010  \\ \hline
+"p"     &       0.013240755691910222    &       100001  \\ \hline
+"b"     &       0.012917810431131924    &       100000  \\ \hline
+"k"     &       0.010172775714516389    &       1111010 \\ \hline
+"v"     &       0.006943323106733409    &       11110111        \\ \hline
+"j"     &       0.0019376715646697885   &       1111011011      \\ \hline
+"x"     &       0.0008073631519457452   &       11110110101     \\ \hline
+"T"     &       0.00048441789116744714  &       11110110000     \\ \hline
+"q"     &       0.00048441789116744714  &       11110110001     \\ \hline
+"S"     &       0.0003229452607782981   &       111101100101    \\ \hline
+"C"     &       0.0003229452607782981   &       111101100110    \\ \hline
+"A"     &       0.00016147263038914905  &       1111011001110   \\ \hline
+","     &       0.00016147263038914905  &       1111011001111   \\ \hline
+"M"     &       0.00016147263038914905  &       1111011010000   \\ \hline
+"("     &       0.00016147263038914905  &       1111011010001   \\ \hline
+")"     &       0.00016147263038914905  &       1111011010010   \\ \hline
+"\textbackslash n"      &       0.00016147263038914905  &       1111011010011   \\ \hline
+"z"     &       0.00016147263038914905  &       111101100100    \\ \hline
+\end{tabular}
+\caption{Pravděpodobnosti znaků a Huffmanův kód sada 011.txt.}
+\label{pzhk_011.txt_table}
+\end{table}   		
+ 
+			
+   		\subsection{Střední délka kódu}\label{sdk}
+			Střední délka optimálního kódu sestaveného pro text 009.txt je pro oba texty vypočítána pomocí následujícího vzorce.
+			
+			$$ L(C) = \sum_{x \displaystyle \in X} l(x) p(x)$$		
+   		
+\begin{table}[!ht]
+\centering
+\begin{tabular}{ | c | l | l | l | } \hline
+Text	& Entropie & Délka CC kódu pro 009.txt & Délka CC kódu pro 011.txt \\ \hline
+009.txt & 4.087103237335235 & 4.131728045325779 & 4.12304214435653 \\ \hline
+011.txt & 4.084709593540786 & 4.134506701114161 & 4.127832861189802 \\ \hline
+\end{tabular}
+\caption{Délka Huffmanova kódu sestaveného pro oba texty}
+\label{code_table}
+\end{table}
+
+
+   	\section{Závěr}\label{z}
+   		Nejpravděpodobnějším znakem obou zkoumaných textů byla mezera. Jako další dva nejvíce pravděpodobné znaky vychází písmena \uv{e} a \uv{t}. To odpovídá standardní frekvenci těchto znaků pro anglický text.
+   		
+   		Entropie byla pro oba texty téměř shodná, po zaokrouhlení rovna 4,1.
+   		
+   		Optimální kód byl nalezen pomocí Huffmanova algoritmu pro oba texty. Kódová slova pro nejvíce frekventované znaky jsou dle očekávaní nejkratší. Optimální kód pro druhý text nebylo dle zadání potřeba konstruovat, jeho podobu uvádíme pouze pro porovnání.
+   		
+   		Pro optimální kód platí dle předpokladů nerovnost:
+   		
+   		$$ H(X) \leq L(CC) < H(X) + 1 $$
+   		
+   		
+   		
+
+\end{document}
