@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (MiKTeX 2.9.7200 64-bit) (preloaded format=xelatex 2019.10.9)  1 MAY 2020 04:51
+This is XeTeX, Version 3.14159265-2.6-0.999991 (MiKTeX 2.9.7200 64-bit) (preloaded format=xelatex 2019.10.9)  9 MAY 2020 03:31
 entering extended mode
 **./template.tex
 (template.tex
@@ -580,29 +580,22 @@ File: ../009_char_prob.png Graphic file (type bmp)
 <../009_char_prob.png>
 File: ../011_char_prob.png Graphic file (type bmp)
 <../011_char_prob.png>
- [2]
-
-LaTeX Warning: Float too large for page by 76.7327pt on input line 157.
-
-
-LaTeX Warning: Float too large for page by 17.13278pt on input line 203.
-
-[3]
-Overfull \hbox (10.86653pt too wide) in paragraph at lines 213--218
+ [2] [3]
+Overfull \hbox (16.86653pt too wide) in paragraph at lines 190--195
  [][] 
  []
 
-[4] [5] [6] [7]
+[4] [5] [6]
 LaTeX Font Info:    Trying to load font information for OT1+TimesNewRoman(0) on
- input line 224.
-LaTeX Font Info:    No file OT1TimesNewRoman(0).fd. on input line 224.
+ input line 201.
+LaTeX Font Info:    No file OT1TimesNewRoman(0).fd. on input line 201.
 
 
 LaTeX Font Warning: Font shape `OT1/TimesNewRoman(0)/m/n' undefined
 (Font)              using `OT1/cmr/m/n' instead
-(Font)              for symbol `clqq' on input line 224.
+(Font)              for symbol `clqq' on input line 201.
 
-[8
+[7
 
 ] (template.aux)
 
@@ -610,12 +603,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 15782 strings out of 427242
- 331823 string characters out of 3145763
- 578926 words of memory out of 3000000
- 20164 multiletter control sequences out of 15000+200000
+ 15766 strings out of 427242
+ 331602 string characters out of 3145763
+ 573926 words of memory out of 3000000
+ 20148 multiletter control sequences out of 15000+200000
  536127 words of font info for 62 fonts, out of 3000000 for 9000
  1348 hyphenation exceptions out of 8191
  43i,7n,79p,518b,429s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on template.pdf (9 pages).
+Output written on template.pdf (8 pages).

@@ -27,6 +27,8 @@ def char_prob(filename):
         print("-----------------------------")
         chars = dict()
         char_count = 0
+        first_line = f.readline()
+        print(f'Not using first line: {first_line}')
         for line in f:
             for c in line:
                 if c == '\n': c = '\\n'
@@ -141,8 +143,7 @@ def huf_code(chars, probs):
 
 if __name__ == "__main__":
 
-    print([K, L, X, Y])
-    char_prob(folder+yyy)
     char_prob(folder+xxx)
+    char_prob(folder+yyy)
 
 

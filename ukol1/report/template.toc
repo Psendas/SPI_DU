@@ -5,4 +5,4 @@
 \contentsline {subsection}{\numberline {2.2}Entropie textů}{2}% 
 \contentsline {subsection}{\numberline {2.3}Optimální instantní kód}{3}% 
 \contentsline {subsection}{\numberline {2.4}Střední délka kódu}{4}% 
-\contentsline {section}{\numberline {3}Závěr}{8}% 
+\contentsline {section}{\numberline {3}Závěr}{7}% 
