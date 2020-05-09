@@ -10,7 +10,6 @@ DefaultOpen = xdg-open
 
 all:
 	$(BUILDTEX)
-	$(BIBTEX) $(BIBS)
 	$(BUILDTEX)
 	$(BUILDTEX)
 

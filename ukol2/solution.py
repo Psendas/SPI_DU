@@ -25,8 +25,11 @@ def task_1(filename, word_lengths, word_lengths_dic):
     print(colored("File {} - mean: {}; variance: {}".format(filename, np.mean(word_lengths), np.var(word_lengths)),
     'green'))
     df1 = pd.DataFrame.from_dict(word_lengths_dic, orient='index', columns=['cnt']).sort_index()
-    plot1 = df1.plot.bar(y='cnt', rot=0)
-    plot1.get_figure().savefig("hw2_plot1_{}.pdf".format(filename))
+    plot = df1.plot.bar(y='cnt', rot=0)
+    plot.set_xlabel('Délka slova')
+    plot.set_ylabel('Počet')
+    plot.get_legend().remove()
+    plot.get_figure().savefig("hw2_plot1_{}.pdf".format(filename))
 
 
 def task_3(word_dic_1, word_dic_2):

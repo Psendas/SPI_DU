@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Arch Linux) (preloaded format=xelatex 2020.5.3)  3 MAY 2020 19:13
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Arch Linux) (preloaded format=xelatex 2020.5.5)  10 MAY 2020 01:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -427,7 +427,11 @@ Package fontspec Info: Font family 'DejaVuSerif(0)' created for font 'DejaVu
 (fontspec)             Serif/OT:script=latn;language=DFLT;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
- (./template.aux)
+ (./template.aux
+
+LaTeX Warning: Label `pz' multiply defined.
+
+)
 \openout1 = `template.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
@@ -447,8 +451,7 @@ LaTeX Font Info:    ... okay on input line 46.
 LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 46.
 LaTeX Font Info:    Trying to load font information for LGR+cmr on input line 4
 6.
-
-(/usr/share/texmf-dist/tex/latex/cbfonts-fd/lgrcmr.fd
+ (/usr/share/texmf-dist/tex/latex/cbfonts-fd/lgrcmr.fd
 File: lgrcmr.fd 2017/07/29 v1.2 Greek European Computer Regular
 )
 LaTeX Font Info:    ... okay on input line 46.
@@ -559,47 +562,28 @@ File: symbol_cvut_plna_samostatna_verze_cb.pdf Graphic file (type pdf)
 \openout3 = `template.toc'.
 
  [1]
-File: ../009_char_prob.png Graphic file (type bmp)
-<../009_char_prob.png>
-File: ../011_char_prob.png Graphic file (type bmp)
-<../011_char_prob.png>
-Missing character: There is no ﬀ in font Times New Roman/OT:mapping=tex-text;!
- [2]
-
-LaTeX Warning: Float too large for page by 76.7327pt on input line 155.
-
-
-LaTeX Warning: Float too large for page by 17.13278pt on input line 201.
-
-[3]
-Overfull \hbox (10.86653pt too wide) in paragraph at lines 211--216
- [][] 
- []
-
-[4] [5] [6] [7]
-LaTeX Font Info:    Trying to load font information for OT1+TimesNewRoman(0) on
- input line 222.
-LaTeX Font Info:    No file OT1TimesNewRoman(0).fd. on input line 222.
-
-
-LaTeX Font Warning: Font shape `OT1/TimesNewRoman(0)/m/n' undefined
-(Font)              using `OT1/cmr/m/n' instead
-(Font)              for symbol `clqq' on input line 222.
-
-[8
+File: hw2_plot1_009.pdf Graphic file (type pdf)
+<use hw2_plot1_009.pdf>
+File: hw2_plot1_011.pdf Graphic file (type pdf)
+<use hw2_plot1_011.pdf>
+File: 009_char_prob.png Graphic file (type bmp)
+<009_char_prob.png>
+File: 011_char_prob.png Graphic file (type bmp)
+<011_char_prob.png>
+ [2] [3] [4] [5] [6] [7
 
 ] (./template.aux)
 
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 15837 strings out of 492483
- 334202 string characters out of 6134980
- 581587 words of memory out of 5000000
- 20206 multiletter control sequences out of 15000+600000
- 536127 words of font info for 62 fonts, out of 8000000 for 9000
+ 15784 strings out of 492483
+ 333483 string characters out of 6134980
+ 566587 words of memory out of 5000000
+ 20156 multiletter control sequences out of 15000+600000
+ 536062 words of font info for 61 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 45i,7n,67p,516b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 45i,10n,67p,463b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on template.pdf (9 pages).
+Output written on template.pdf (8 pages).
