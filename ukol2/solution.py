@@ -30,6 +30,8 @@ def task_1(filename, word_lengths, word_lengths_dic):
     plot.set_ylabel('Počet')
     plot.get_legend().remove()
     plot.get_figure().savefig("hw2_plot1_{}.pdf".format(filename))
+    df2 = df1.transpose()
+    print(df2.to_latex())
 
 
 def task_3(word_dic_1, word_dic_2):

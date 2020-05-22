@@ -2,5 +2,7 @@
 \contentsline {section}{\numberline {1}Zadání}{2}% 
 \contentsline {section}{\numberline {2}Řešení}{2}% 
 \contentsline {subsection}{\numberline {2.1}Charakteristika délek slov}{2}% 
-\contentsline {subsection}{\numberline {2.2}Pravděpodobnosti znaků}{2}% 
-\contentsline {section}{\numberline {3}Závěr}{7}% 
+\contentsline {subsection}{\numberline {2.2}Pravděpodobnosti znaků}{3}% 
+\contentsline {subsection}{\numberline {2.3}Na hladině významnosti 5\% otestujte hypotézu, že rozdělení délek slov nezávisí na tom, o který jde text. Určete také p-hodnotu testu.}{3}% 
+\contentsline {subsection}{\numberline {2.4}Na hladině významnosti 5\% otestujte hypotézu, že se střední délky slov v obou textech rovnají. Určete také p-hodnotu testu.}{5}% 
+\contentsline {section}{\numberline {3}Závěr}{6}% 

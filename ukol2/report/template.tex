@@ -70,7 +70,7 @@
 		\subsection{Charakteristika délek slov}\label{pz}
             Pro odhad charakteristik délek slov jsme použili výběrový průměr a výběrový rozptyl: 
                $$\bar{X}_n = \frac{1}{n} \sum_{i}{X_i}$$   					
-               $$s_n^2 = \frac{1}{n-1} \sum_{i}{(X_i - \bar{X}_n)^2}$$   					
+               $$s_n^2 = \frac{1}{n-1} \sum_{i}{(X_i - \bar{X}_n)^2}$$.
             Výsledky sledujeme v tabulce~\ref{stat-table} a na obrázcích~\ref{009_graph} a~\ref{011_graph}. 
 
 	\begin{table}[!ht]
@@ -98,7 +98,7 @@ Text	& $\bar{X}_n$ & $s_n^2$ \\ \hline
   \end{figure}
 
 				\subsection{Pravděpodobnosti znaků}\label{pz}
-			 Pravděpodobnost jednotlivých znaků byla vypočítána jako poměr výskytu znaku k celkovému počtu všech znaků a je znázorněna v grafech \ref{009_graph2} a \ref{011_graph2} pomocí nástroje matplotlib.
+			 Pravděpodobnost jednotlivých znaků byla vypočítána jako poměr počtu výskytů jednotlivých znaků k celkovému počtu všech znaků a je znázorněna v grafech \ref{009_graph2} a \ref{011_graph2} pomocí nástroje matplotlib.
 						
 \begin{figure}[!htb]
 \includegraphics[scale=0.8]{009_char_prob.png}\centering\caption{Grafické znázornění pravděpodobností znaků textu 009.txt}\label{009_graph2}
@@ -107,8 +107,37 @@ Text	& $\bar{X}_n$ & $s_n^2$ \\ \hline
 \begin{figure}[!htb]
 \includegraphics[scale=0.8]{011_char_prob.png}\centering\caption{Grafické znázornění pravděpodobností znaků textu 011.txt}\label{011_graph2}
 \end{figure}
+
+    \subsection{Na hladině významnosti 5\% otestujte hypotézu, že rozdělení délek slov nezávisí na tom, o který jde text. Určete také p-hodnotu testu.}	
+		
+    Provedli jsme test nezávislosti v kontingenční tabulce, viz tabulku~\ref{Cont_table1}. Testujeme hypotézu $H_0$, že rozdělení délek slov nezávisí na volbě zdrojového textu oproti alternativě $H_A$, že na volbě zdrojového textu závisí. \\
+Testová statistika $\chi^2$ má tvar
+$$\chi^2 = n\sum_{i =1}^r\sum_{j=1}^c \frac{N_{i,j}^2}{N_{i, \bullet}N_{\bullet, j}}$$
+a po dosazení $r=2, c=15$ máme $\chi^2 = 45.6235$ a p-hodnotu $3.2990e-05$
+
+Kritická hodnota je $\chi^2_{\alpha, (r-1)(c-1)} = \chi^2_{0.05, 14} = 23.68$. Protože je naše testová statistika větší než kritická hodnota, zamítáme nulovou hypotézu ve prospěch alternativy.
+
+\subsection{Na hladině významnosti 5\% otestujte hypotézu, že se střední délky slov v obou textech rovnají. Určete také p-hodnotu testu.}
+Cheme testovat hypotézu $H_0: \mu_1 = \mu_2$ proti $H_A: \mu_1 \neq \mu_2$. Použijeme dvouvýběrový t-test za předpokladu různých rozptylů, tedy $\sigma_1 \neq \sigma_2$.\\
+Použijeme tedy konkrétně testovou statistiku 
+$$T = \frac{\bar{X}_n - \bar{Y}_n}{s_d},$$
+kde
+$$s_d = \sqrt{\frac{s_X^2}{n}+\frac{s_Y^2}{m}}$$
+
+Po dosazení vychází $T = -4.409004682120487$ a p-hodnota je $1.0882e-05$
+
+    \begin{table}[!ht]
+    \centering
+    \begin{tabular}{|l|rrrrrrrrrrrrrrr|} \hline
+Soubor &  1  &   2  &   3  &   4  &   5  &  6  &  7  &  8  &  9  &  10 &  11 &  12 &  13 & 14 & 15 \\ \hline
+009.txt &  40 &  186 &  270 &  175 &  125 &  93 &  70 &  41 &  32 &  13 &   9 &   2 &   3 & 0 &  1 \\ \hline
+011.txt &  101 &  217 &  343 &  257 &  119 &  87 &  55 &  28 &  20 &  12 &  14 &   2 &   3 &   1 &   1 \\ \hline
+
+\end{tabular}
+\caption{Kontingenční tabulka četností délek slov}
+\label{Cont_table1}
+\end{table}
 	
-			
    	\section{Závěr}\label{z}
    		
 
