@@ -100,33 +100,13 @@ Text	& $\bar{X}_n$ & $s_n^2$ \\ \hline
 				\subsection{Pravděpodobnosti znaků}\label{pz}
 			 Pravděpodobnost jednotlivých znaků byla vypočítána jako poměr počtu výskytů jednotlivých znaků k celkovému počtu všech znaků a je znázorněna v grafech \ref{009_graph2} a \ref{011_graph2} pomocí nástroje matplotlib.
 						
-\begin{figure}[!htb]
-\includegraphics[scale=0.8]{009_char_prob.png}\centering\caption{Grafické znázornění pravděpodobností znaků textu 009.txt}\label{009_graph2}
-\end{figure}
 
-\begin{figure}[!htb]
-\includegraphics[scale=0.8]{011_char_prob.png}\centering\caption{Grafické znázornění pravděpodobností znaků textu 011.txt}\label{011_graph2}
-\end{figure}
-
-    \subsection{Na hladině významnosti 5\% otestujte hypotézu, že rozdělení délek slov nezávisí na tom, o který jde text. Určete také p-hodnotu testu.}	
+    \subsection{Na hladině významnosti 5\% otestujte hypotézu, že rozdělení délek slov nezávisí na tom, o který jde
+    text. Určete také p-hodnotu testu.} \label{ukol3}
 		
-    Provedli jsme test nezávislosti v kontingenční tabulce, viz tabulku~\ref{Cont_table1}. Testujeme hypotézu $H_0$, že rozdělení délek slov nezávisí na volbě zdrojového textu oproti alternativě $H_A$, že na volbě zdrojového textu závisí. \\
-Testová statistika $\chi^2$ má tvar
-$$\chi^2 = n\sum_{i =1}^r\sum_{j=1}^c \frac{N_{i,j}^2}{N_{i, \bullet}N_{\bullet, j}}$$
-a po dosazení $r=2, c=15$ máme $\chi^2 = 45.6235$ a p-hodnotu $3.2990e-05$
-
-Kritická hodnota je $\chi^2_{\alpha, (r-1)(c-1)} = \chi^2_{0.05, 14} = 23.68$. Protože je naše testová statistika větší než kritická hodnota, zamítáme nulovou hypotézu ve prospěch alternativy.
-
-\subsection{Na hladině významnosti 5\% otestujte hypotézu, že se střední délky slov v obou textech rovnají. Určete také p-hodnotu testu.}
-Cheme testovat hypotézu $H_0: \mu_1 = \mu_2$ proti $H_A: \mu_1 \neq \mu_2$. Použijeme dvouvýběrový t-test za předpokladu různých rozptylů, tedy $\sigma_1 \neq \sigma_2$.\\
-Použijeme tedy konkrétně testovou statistiku 
-$$T = \frac{\bar{X}_n - \bar{Y}_n}{s_d},$$
-kde
-$$s_d = \sqrt{\frac{s_X^2}{n}+\frac{s_Y^2}{m}}$$
-
-Po dosazení vychází $T = -4.409004682120487$ a p-hodnota je $1.0882e-05$
-
-    \begin{table}[!ht]
+   Provedli jsme test nezávislosti v kontingenční tabulce, viz tabulku~\ref{Cont_table1}. Testujeme hypotézu $H_0$, že rozdělení délek slov nezávisí na volbě zdrojového textu oproti alternativě $H_A$, že na volbě zdrojového textu závisí. \\
+   
+   \begin{table}[!ht]
     \centering
     \begin{tabular}{|l|rrrrrrrrrrrrrrr|} \hline
 Soubor &  1  &   2  &   3  &   4  &   5  &  6  &  7  &  8  &  9  &  10 &  11 &  12 &  13 & 14 & 15 \\ \hline
@@ -137,8 +117,53 @@ Soubor &  1  &   2  &   3  &   4  &   5  &  6  &  7  &  8  &  9  &  10 &  11 &  
 \caption{Kontingenční tabulka četností délek slov}
 \label{Cont_table1}
 \end{table}
-	
+
+Testová statistika $\chi^2$ má tvar
+$$\chi^2 = n\sum_{i =1}^r\sum_{j=1}^c \frac{N_{i,j}^2}{N_{i, \bullet}N_{\bullet, j}}$$
+a po dosazení $r=2, c=15$ máme $\chi^2 = 45.6235$ a p-hodnotu $3.2990e-05$.
+
+Kritická hodnota je $\chi^2_{\alpha, (r-1)(c-1)} = \chi^2_{0.05, 14} = 23.68$. Protože je naše testová statistika větší než kritická hodnota, zamítáme nulovou hypotézu ve prospěch alternativy.
+
+\subsection{Na hladině významnosti 5\% otestujte hypotézu, že se střední délky slov v obou textech rovnají. Určete také p-hodnotu testu.}
+Cheme testovat hypotézu $H_0: \mu_1 = \mu_2$ proti $H_A: \mu_1 \neq \mu_2$. Použijeme dvouvýběrový t-test za předpokladu
+různých rozptylů, tedy $\sigma_1 \neq \sigma_2$, naše náhodné výběry jsou v tabulce~\ref{Cont_table1}.\\
+Použijeme tedy konkrétně testovou statistiku 
+$$T = \frac{\bar{X}_n - \bar{Y}_n}{s_d},$$
+kde
+$$s_d = \sqrt{\frac{s_X^2}{n}+\frac{s_Y^2}{m}}$$.
+
+Po dosazení vychází $T = -4.409004682120487$ a p-hodnota je $1.0882e-05$.
+Pro kritický obor přitom platí $|T| \ge t_{\alpha/2,n_d}$, kde
+$$n_d = \frac{s_d^4}{\frac{1}{n-1}(\frac{s_X^2}{n})^2+\frac{1}{m-1}(\frac{s_Y^2}{m})^2}.$$
+Po dosazení máme $t_{0.025, n_d} = 1.9610$, tedy $|T| \ge t_{0.025, n_d}$ a nulovou hypotézu zamítáme ve prospěch
+alternativy.
+
+  \subsection{Na hladině významnosti 5\% otestujte hypotézu, že rozdělení písmen nezávisí na tom, o který jde text. Určete také p-hodnotu testu.}
+    Stejně jako v sekci~\ref{ukol3} použijeme nezávislosti v kontingenční tabulce, akorát použijeme jiná vstupní data.
+    Rozdělení písmen je vidět na obrázcích~\ref{009_graph2} a~\ref{011_grapg2}, kontingenční tabulka četností je příliš
+    velká a nevešla se rozumným způsobem na stránku. Testujeme hypotézu $H_0$, že rozdělení
+    písmen nezávisí na volbě zdrojového textu oproti alternativě $H_A$, že na volbě zdrojového textu závisí. \\
+   
+Testová statistika $\chi^2$ má tvar
+$$\chi^2 = n\sum_{i =1}^r\sum_{j=1}^c \frac{N_{i,j}^2}{N_{i, \bullet}N_{\bullet, j}}$$
+a po dosazení $r=2, c=25$ máme $\chi^2 = 41.2762$ a p-hodnotu $0.0215$.
+
+Kritická hodnota je $\chi^2_{\alpha, (r-1)(c-1)} = \chi^2_{0.05,24} = 36.42$. Protože je naše testová statistika větší
+než kritická hodnota, zamítáme nulovou hypotézu ve prospěch alternativy. Vidíme, že tentokrát je test méně přesvědčivý
+než v případě úkolu~\ref{ukol3}.
+
+\begin{figure}[!ht]
+\includegraphics[scale=0.8]{009_char_prob.png}\centering\caption{Grafické znázornění pravděpodobností znaků textu 009.txt}\label{009_graph2}
+\end{figure}
+
+\begin{figure}[!ht]
+\includegraphics[scale=0.8]{011_char_prob.png}\centering\caption{Grafické znázornění pravděpodobností znaků textu 011.txt}\label{011_graph2}
+\end{figure}
+
+
+
    	\section{Závěr}\label{z}
-   		
+    Všechny testované hypotézy jsme zamítli, můžeme učinit závěr, že si v testovaných statistikách zdrojové texty nejsou
+    přiliš podobné.
 
 \end{document}

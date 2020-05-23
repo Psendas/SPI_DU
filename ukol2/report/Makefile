@@ -13,7 +13,7 @@ all:
 	$(BUILDTEX)
 	$(BUILDTEX)
 
-open:
+open: all
 	$(DefaultOpen) $(PDFFILE)
 
 clean:

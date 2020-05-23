@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Arch Linux) (preloaded format=xelatex 2020.5.5)  22 MAY 2020 02:21
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Arch Linux) (preloaded format=xelatex 2020.5.11)  23 MAY 2020 11:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -566,34 +566,52 @@ File: hw2_plot1_009.pdf Graphic file (type pdf)
 <use hw2_plot1_009.pdf>
 File: hw2_plot1_011.pdf Graphic file (type pdf)
 <use hw2_plot1_011.pdf>
-File: 009_char_prob.png Graphic file (type bmp)
-<009_char_prob.png>
  [2]
-File: 011_char_prob.png Graphic file (type bmp)
-<011_char_prob.png>
- [3]
-Overfull \hbox (0.38634pt too wide) in paragraph at lines 120--120
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
+
+ []
+
+
+Overfull \hbox (6.66554pt too wide) in paragraph at lines 111--117
+ [][] 
+ []
+
+[3]
+Overfull \hbox (0.38634pt too wide) in paragraph at lines 127--127
 []\TU/TimesNewRoman(0)/bx/n/14.4 Na hladině významnosti 5% otestujte hypotézu, 
 že se střední délky
  []
 
 [4]
-Overfull \hbox (6.66554pt too wide) in paragraph at lines 129--135
- [][] 
+
+LaTeX Warning: Reference `011_grapg2' on page 5 undefined on input line 143.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 142--146
+
  []
 
-[5] [6] (./template.aux)
+File: 009_char_prob.png Graphic file (type bmp)
+<009_char_prob.png>
+File: 011_char_prob.png Graphic file (type bmp)
+<011_char_prob.png>
+[5] [6] [7] [8
+
+] (./template.aux)
+
+LaTeX Warning: There were undefined references.
+
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 15785 strings out of 492483
- 333496 string characters out of 6134980
+ 15787 strings out of 492483
+ 333515 string characters out of 6134979
  566587 words of memory out of 5000000
- 20157 multiletter control sequences out of 15000+600000
+ 20159 multiletter control sequences out of 15000+600000
  536062 words of font info for 61 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  45i,10n,67p,463b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on template.pdf (7 pages).
+Output written on template.pdf (9 pages).

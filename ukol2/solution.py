@@ -7,6 +7,8 @@ import pandas as pd
 import os
 from scipy.stats import chi2_contingency
 from scipy.stats import ttest_ind
+import math
+from scipy import stats
 
 # --------------------- File selection ----------------------------------------
 K = 27 # den narození reprezentanta skupiny (1-31)
@@ -48,6 +50,21 @@ def task_3(word_dic_1, word_dic_2):
 def task_4(words_1, words_2):
    t, p = ttest_ind(words_1,words_2, equal_var = False)
    print (colored(f'test value={t}, p-val={p}', 'green'))
+   var_x = np.var(words_1)
+   var_y = np.var(words_2)
+   len_x = len(words_1)
+   len_y = len(words_2)
+   
+   var_x_n = var_x / len_x
+   var_y_m = var_y / len_y
+
+   print(var_x, var_y, len_x, len_y)
+
+   s_d = math.sqrt(var_x_n + var_y_m)
+   n_d = math.pow(s_d, 4) / (1/(len_x-1) *  math.pow(var_x_n, 2) + 1/(len_y-1) * math.pow(var_y_m, 2) )
+   print(colored(f'n_d={n_d}', 'green'))
+   print (stats.t.ppf(.975, n_d))
+
 
 
 def process_file(filename, chars, word_lengths, word_lengths_dic):
